@@ -1,0 +1,168 @@
+/*手機直的*/
+body {
+    background-color: rgb(199, 197, 197);
+}
+
+#root {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#layout {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+#layout header {
+    grid-area: header;
+    background-color: rgb(255, 255, 255);
+}
+
+#layout main {
+    box-sizing: border-box;
+    grid-area: content;
+    background-color: lightpink;
+}
+
+#layout main #cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#cards section {
+    /* flex: 擴充  縮小  自動大小*/
+    flex: 0 1 100%;
+    /*border: 1px solid black;*/
+}
+#cards section div {
+    border:7px double black;
+    border-radius:5px;
+    margin:0.5em;
+    padding:0.3em;
+}
+
+#cards section.s1 {
+    background-color: rgb(132, 248, 252);
+}
+
+#cards section.s2 {
+    background-color: yellow;
+}
+
+#layout footer {
+    grid-area: footer;
+    background-color: white;
+}
+
+header h2 {
+    font-size: 2em;
+    text-align: center;
+    line-height: 1.5em;
+    color: #373738;
+    margin-top: 2em;
+}
+
+header img {
+    display: block;
+    margin: 1em auto 2em;
+}
+
+
+footer ul {
+    margin: 1em 0 2em 0;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+
+
+footer ul svg,
+footer ul span {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer ul a {
+    text-decoration: none;
+    color:rgb(172, 132, 0);
+}
+
+
+footer ul a:hover {
+    color: black;
+}
+
+footer ul li {
+    margin: 0 0.5em;
+}
+
+address {
+    font-size: small;
+    text-align: center;
+}
+
+/* Small devices (landscape phones, 576px and up) 手機橫的 */
+@media (min-width: 576px) {
+    #root {
+        width: 100%;
+    }
+
+}
+
+
+/* .container-md	100%	100%	720px	960px	1140px	1320px */
+/* Medium devices (tablets, 768px and up) 平板 */
+@media (min-width: 768px) {
+    #root {
+        max-width: 720px;
+
+    }
+
+    #cards section {
+        /* flex: 擴充(0:不要, 1要)  縮小(0:不要, 1要)  自動大小*/
+        flex: 0 1 50%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) 筆電 */
+@media (min-width: 992px) {
+    #root {
+        max-width: 960px;
+    }
+
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) 桌機*/
+@media (min-width: 1200px) {
+    #root {
+        max-width: 1140px;
+    }
+
+    #cards section {
+        /* flex: 剩下1%要擴充(0:不要, 1要)  縮小(0:不要, 1要)  自動大小*/
+        flex: 1 1 33%;
+    }
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) 電競*/
+@media (min-width: 1400px) {
+    #root {
+        max-width: 1320px;
+    }
+
+
+}
